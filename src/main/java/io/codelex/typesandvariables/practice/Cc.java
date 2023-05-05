@@ -1,6 +1,7 @@
 package io.codelex.typesandvariables.practice;
 
 import java.util.Random;
+// Please ignore this
 
 public class Cc {
     private static final String RESET = "\033[0m";
@@ -20,6 +21,7 @@ public class Cc {
         try{
             return colours[colour] + text + RESET;
         }catch (ArrayIndexOutOfBoundsException error){
+            // not the best way to do this
             return colours[colour - 3] + text + RESET;
         }
     }

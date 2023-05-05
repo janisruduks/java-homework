@@ -1,7 +1,7 @@
 package io.codelex.typesandvariables.practice;
 
 import java.util.Scanner;
-
+// uses Cc class for colours
 public class CountUppercaseLetters {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
