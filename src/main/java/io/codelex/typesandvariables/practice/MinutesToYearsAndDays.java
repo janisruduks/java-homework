@@ -2,9 +2,8 @@ package io.codelex.typesandvariables.practice;
 
 public class MinutesToYearsAndDays {
     public static void main(String[] args){
-        int minutes = 1524022; // 2 years and 0.5 day
+        int minutes = 1051920; // 2 years and 0.5 days
 
-        // out put should be 'your input minutes are 2 years and 1 day'
         minutesToYearsAndDays(minutes);
     }
     public static void minutesToYearsAndDays(int inputMinutes){
@@ -14,8 +13,8 @@ public class MinutesToYearsAndDays {
         float numberOfYears = (hoursToDays / 365);
         float numberOfDays = hoursToDays - (int) numberOfYears * 365;
 
-        String yearsOrYear = "year's";
-        String daysOrDay = "day's";
+        String yearsOrYear = "years";
+        String daysOrDay = "days";
 
         if(numberOfYears == 1){
             yearsOrYear = "year";
