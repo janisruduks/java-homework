@@ -7,6 +7,7 @@ public class CountUserInput {
         Scanner scan = new Scanner(System.in);
         String[] input = scan.nextLine().split(" ");
         scan.close();
+
         int sum = 0;
         for(String numberString: input){
             int number = Integer.parseInt(numberString);
