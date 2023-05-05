@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11b74aff-8cd4-4032-86ee-e6da97ee0a3b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/SpeedDistanceTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/CountUserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/CountUserInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/MinutesToYearsAndDays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/MinutesToYearsAndDays.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,7 @@
       <workItem from="1683235085420" duration="8197000" />
       <workItem from="1683271637581" duration="8975000" />
       <workItem from="1683291873553" duration="3979000" />
-      <workItem from="1683308450728" duration="7078000" />
+      <workItem from="1683308450728" duration="7756000" />
     </task>
     <servers />
   </component>
