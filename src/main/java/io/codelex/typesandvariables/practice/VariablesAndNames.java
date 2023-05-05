@@ -10,7 +10,6 @@ public class VariablesAndNames {
         int carpoolCapacity = drivers * carSeats;
         double averagePassengersPerCar = (double) passengers / drivers;
 
-        // We can use Cc.textColour()
         System.out.println("There are " + cars + " cars available.");
         System.out.println("There are only " + drivers + " drivers available.");
         System.out.println("There will be " + emptyCars + " empty cars today.");

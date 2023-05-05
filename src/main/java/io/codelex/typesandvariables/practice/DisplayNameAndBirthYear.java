@@ -4,6 +4,6 @@ public class DisplayNameAndBirthYear {
     public static void main(String[] args){
         String name = "Janis Ruduks";
         int yearOfBirth = 1998;
-        System.out.println("My name is " + name + " and I was born in " + yearOfBirth + ".");
+        System.out.printf("My name is %s and I was born in %d.", name, yearOfBirth);
     }
 }
