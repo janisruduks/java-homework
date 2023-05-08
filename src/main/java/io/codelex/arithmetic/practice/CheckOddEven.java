@@ -2,9 +2,9 @@ package io.codelex.arithmetic.practice;
 
 public class CheckOddEven {
     public static void main(String[] args){
-        input(14);
+        Input(14);
     }
-    public static void input(int number){
+    public static void Input(int number){
         if(number % 2 == 0){
             System.out.println("Even number");
         }else {

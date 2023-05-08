@@ -77,6 +77,8 @@ Method addAllX is less restrictive than addAllY. Provide an example to prove thi
 
 ## Exercise #4
 
+## Should be replaced with different task!!!
+
 Clearly a Wolf can eat a Sheep but not the other way around. In the following subtasks we explore if relaxing some of the Java type rules can lead to a situation where a Sheep can eat a Wolf - that is, the method eat is called on an object of the dynamic type Sheep with an argument object of the dynamic type Wolf.
  
 All the code you give in the answers to the following sections is in the same package as the code above, and must type check in standard Java. The top method that is called in all sections is Zoo.manage.
