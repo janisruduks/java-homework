@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11b74aff-8cd4-4032-86ee-e6da97ee0a3b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/BodyMassIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/CheckNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/CheckOddEven.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/CozaLozaWoza.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/HourlyPaymentCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/NumberGuesserGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/Product1ToN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/CalculateArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/CalculateArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/GravityCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/GravityCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/SumAverageRunningInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/arithmetic/practice/SumAverageRunningInt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/Cc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/Cc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/CountUppercaseLetters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/CountUppercaseLetters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/DisplayNameAndBirthYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/DisplayNameAndBirthYear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/MinutesToYearsAndDays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/MinutesToYearsAndDays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/MoreVariablesAndPrinting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/MoreVariablesAndPrinting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/SpeedDistanceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/SpeedDistanceTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/TableDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/TableDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/VariablesAndNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/codelex/typesandvariables/practice/VariablesAndNames.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +52,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;homework-00&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/janis/Desktop/java-homework&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -70,6 +78,10 @@
       <workItem from="1683271637581" duration="8975000" />
       <workItem from="1683291873553" duration="3979000" />
       <workItem from="1683308450728" duration="10586000" />
+      <workItem from="1683372294535" duration="9445000" />
+      <workItem from="1683457040896" duration="21136000" />
+      <workItem from="1683526367826" duration="9606000" />
+      <workItem from="1683548087431" duration="3977000" />
     </task>
     <servers />
   </component>
