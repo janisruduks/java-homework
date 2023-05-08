@@ -1,37 +1,28 @@
 package io.codelex.typesandvariables.practice;
 
 import java.util.Random;
-// Please ignore this
 
+// Please ignore this
 public class Cc {
+    private static final String[] COLOURS = {
+            "\033[0;31m", "\033[0;32m", "\033[0;33m",
+            "\033[0;34m", "\033[0;35m", "\033[0;36m"
+    };
     private static final String RESET = "\033[0m";
-    private static final String RED = "\033[0;31m";
-    private static final String GREEN = "\033[0;32m";
-    private static final String YELLOW = "\033[0;33m";
-    private static final String BLUE = "\033[0;34m";
-    private static final String PURPLE = "\033[0;35m";
-    private static final String CYAN = "\033[0;36m";
-    public static final String[] colours = {RED, GREEN, YELLOW, BLUE, PURPLE, CYAN};
-    private static String randomColour(){
-        Random r = new Random();
-        int randomNumber = r.nextInt(colours.length);
-        return colours[randomNumber];
-    }
-    public static String chooseColour(String text, int colour){
-        try{
-            return colours[colour] + text + RESET;
-        }catch (ArrayIndexOutOfBoundsException error){
-            // not the best way to do this
-            return colours[colour - 3] + text + RESET;
+    public static String chooseColour(String text, int colour) {
+        if (colour < 0 || colour >= COLOURS.length) {
+            colour = 0;
         }
+        return COLOURS[colour] + text + RESET;
     }
-    public static String randomColour(int number){
-        return randomColour() + number + RESET;
+    public static String randomColour(String text) {
+        Random random = new Random();
+        String colour = COLOURS[random.nextInt(COLOURS.length)];
+        return colour + text + RESET;
     }
-    public static String randomColour(String text){
-        return randomColour() + text + RESET;
-    }
-    public static String randomColour(double decimal){
-        return randomColour() + decimal + RESET;
+    public static String randomColour(Number number) {
+        Random random = new Random();
+        String colour = COLOURS[random.nextInt(COLOURS.length)];
+        return colour + number + RESET;
     }
 }

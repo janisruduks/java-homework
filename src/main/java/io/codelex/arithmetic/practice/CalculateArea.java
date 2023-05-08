@@ -1,5 +1,7 @@
 package io.codelex.arithmetic.practice;
 
+import io.codelex.typesandvariables.practice.Cc;
+
 import java.math.BigDecimal;
 import java.util.Scanner;
 
@@ -34,7 +36,7 @@ public class CalculateArea {
         Scanner keyboard = new Scanner(System.in);
 
         // Display the menu.
-        System.out.println("Geometry Calculator\n");
+        System.out.println("\nGeometry Calculator\n");
         System.out.println("1. Calculate the Area of a Circle");
         System.out.println("2. Calculate the Area of a Rectangle");
         System.out.println("3. Calculate the Area of a Triangle");
@@ -44,12 +46,11 @@ public class CalculateArea {
         // get input from user
         userChoice = keyboard.nextInt();
 
-        // validate input
+        // Validate input
         while (userChoice < 1 || userChoice > 4) {
             System.out.print("Please enter a valid range: 1, 2, 3, or 4: ");
             userChoice = keyboard.nextInt();
         }
-
         return userChoice;
     }
 
@@ -60,8 +61,15 @@ public class CalculateArea {
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
         System.out.print("What is the circle's radius? ");
-        //todo
+
         //radius = keyboard.nextDouble();
+        radius = keyboard.nextBigDecimal();
+
+        // Validate radius input
+        while (radius.compareTo(ZERO) < 0){
+            System.out.print("Number can't be negative. Please enter a valid number: ");
+            radius = keyboard.nextBigDecimal();
+        }
 
         // Display output
         System.out.println("The circle's area is "
@@ -77,13 +85,26 @@ public class CalculateArea {
 
         // Get length
         System.out.print("Enter length? ");
-        //todo
         //length = keyboard.nextDouble();
+        length = keyboard.nextBigDecimal();
+
+        // Validate length input
+        while (length.compareTo(ZERO) < 0){
+            System.out.print("Number can't be negative. Please enter a valid number: ");
+            length = keyboard.nextBigDecimal();
+        }
 
         // Get width
         System.out.print("Enter width? ");
-        //todo
-        //width = keyboard.nextDouble();
+
+        // width = keyboard.nextDouble();
+        width = keyboard.nextBigDecimal();
+
+        // Validate width input
+        while (width.compareTo(ZERO) < 0){
+            System.out.print("Number can't be negative. Please enter a valid number: ");
+            width = keyboard.nextBigDecimal();
+        }
 
         // Display output
         System.out.println("The rectangle's area is "
@@ -99,16 +120,29 @@ public class CalculateArea {
 
         // Get the base
         System.out.print("Enter length of the triangle's base? ");
-        //todo
-        //base = keyboard.nextDouble();
+
+        base = BigDecimal.valueOf(keyboard.nextDouble());
+
+        // Validate base input
+        while (base.compareTo(ZERO) < 0){
+            System.out.print("Number can't be negative. Please enter a valid number: ");
+            base = keyboard.nextBigDecimal();
+        }
 
         // Get the height
         System.out.print("Enter triangle's height? ");
-        //todo
+
         //height = keyboard.nextDouble();
+        height = BigDecimal.valueOf(keyboard.nextDouble());
+
+        // Validate height input
+        while (height.compareTo(ZERO) < 0){
+            System.out.print("Number can't be negative. Please enter a valid number: ");
+            height = keyboard.nextBigDecimal();
+        }
 
         // Display the triangle's area.
-        System.out.println("The triangle's area is "
+        System.out.print("The triangle's area is "
                 + Geometry.areaOfTriangle(base, height));
     }
 }
