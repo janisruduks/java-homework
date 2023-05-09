@@ -6,7 +6,8 @@ public class SpeedDistanceTime {
     static final int HOURS = 5;
     static final int MINUTES = 56;
     static final int SECONDS = 23;
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
 
         int everythingToSeconds = SECONDS + (HOURS * 60 * 60) + (MINUTES * 60);
         float metersPerSeconds = (float) DISTANCE_METERS / everythingToSeconds;
