@@ -1,16 +1,17 @@
 package io.codelex.typesandvariables.practice;
 
 import java.util.Scanner;
+
 // uses Cc class for colours
 public class CountUppercaseLetters {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         char[] letters = input.toCharArray();
 
         int sum = 0;
-        for(char letter: letters){
-            if((int) letter <= 90 && (int) letter >= 65){
+        for (char letter : letters) {
+            if ((int) letter <= 90 && (int) letter >= 65) {
                 sum++;
             }
         }

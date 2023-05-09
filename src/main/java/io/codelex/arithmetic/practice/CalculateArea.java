@@ -1,7 +1,5 @@
 package io.codelex.arithmetic.practice;
 
-import io.codelex.typesandvariables.practice.Cc;
-
 import java.math.BigDecimal;
 import java.util.Scanner;
 
@@ -66,7 +64,7 @@ public class CalculateArea {
         radius = keyboard.nextBigDecimal();
 
         // Validate radius input
-        while (radius.compareTo(ZERO) < 0){
+        while (radius.compareTo(ZERO) < 0) {
             System.out.print("Number can't be negative. Please enter a valid number: ");
             radius = keyboard.nextBigDecimal();
         }
@@ -89,7 +87,7 @@ public class CalculateArea {
         length = keyboard.nextBigDecimal();
 
         // Validate length input
-        while (length.compareTo(ZERO) < 0){
+        while (length.compareTo(ZERO) < 0) {
             System.out.print("Number can't be negative. Please enter a valid number: ");
             length = keyboard.nextBigDecimal();
         }
@@ -101,7 +99,7 @@ public class CalculateArea {
         width = keyboard.nextBigDecimal();
 
         // Validate width input
-        while (width.compareTo(ZERO) < 0){
+        while (width.compareTo(ZERO) < 0) {
             System.out.print("Number can't be negative. Please enter a valid number: ");
             width = keyboard.nextBigDecimal();
         }
@@ -124,7 +122,7 @@ public class CalculateArea {
         base = BigDecimal.valueOf(keyboard.nextDouble());
 
         // Validate base input
-        while (base.compareTo(ZERO) < 0){
+        while (base.compareTo(ZERO) < 0) {
             System.out.print("Number can't be negative. Please enter a valid number: ");
             base = keyboard.nextBigDecimal();
         }
@@ -136,7 +134,7 @@ public class CalculateArea {
         height = BigDecimal.valueOf(keyboard.nextDouble());
 
         // Validate height input
-        while (height.compareTo(ZERO) < 0){
+        while (height.compareTo(ZERO) < 0) {
             System.out.print("Number can't be negative. Please enter a valid number: ");
             height = keyboard.nextBigDecimal();
         }
