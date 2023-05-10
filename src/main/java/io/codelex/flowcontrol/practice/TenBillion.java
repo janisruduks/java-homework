@@ -5,41 +5,50 @@ import java.util.Scanner;
 public class TenBillion {
 
     //TODO: Write a Java program that reads an positive integer and count the number of digits the number (less than ten billion) has.
+    // PAIN
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Input an integer number less than ten billion: ");
 
-        long n = in.nextLong();
+        //todo - check if Long
+        if (in.hasNextLong()) {
 
-        /*
-        todo - check if Long
-        if (?) {
+            long n = in.nextLong();
+
             //todo - check if n is less than zero
-            if (?) {
+            if (n < 0) {
                 n *= -1;
             }
-            fixme
-            if (?) {
+            //fixme
+            if (n >= 10000000000L) {
                 System.out.println("Number is greater or equals 10,000,000,000!");
             } else {
                 int digits = 1;
-                if (?) {
+                if (n >= 10) {
                     digits = 2;
-                } else if (?) {
+                }
+                if (n >= 100) {
                     digits = 3;
-                } else if (?) {
+                }
+                if (n >= 1000) {
                     digits = 4;
-                } else if (?) {
+                }
+                if (n >= 10000) {
                     digits = 5;
-                } else if (?) {
+                }
+                if (n >= 100000) {
                     digits = 6;
-                } else if (?) {
+                }
+                if (n >= 1000000) {
                     digits = 7;
-                } else if (?) {
+                }
+                if (n >= 10000000) {
                     digits = 8;
-                } else if (?) {
+                }
+                if (n >= 100000000) {
                     digits = 9;
-                } else if (?) {
+                }
+                if (n >= 1000000000) {
                     digits = 10;
                 }
                 System.out.println("Number of digits in the number: " + digits);
@@ -47,7 +56,6 @@ public class TenBillion {
         } else {
             System.out.println("The number is not a long");
         }
-        */
     }
 
 }

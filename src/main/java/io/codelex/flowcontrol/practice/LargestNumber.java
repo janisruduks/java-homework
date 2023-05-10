@@ -23,6 +23,13 @@ public class LargestNumber {
         Input the 2nd number: 78
         Input the 3rd number: 87
          */
+        if (num1 > num2 && num1 > num3) {
+            System.out.print("The largest number is: " + num1);
+        } else if (num2 > num1 && num2 > num3) {
+            System.out.print("The largest number is: " + num2);
+        } else {
+            System.out.print("The largest number is: " + num3);
+        }
     }
 
 }
