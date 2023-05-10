@@ -26,7 +26,5 @@ public class AsciiFigure {
             starCount += 8;
             spaceCount -= 4;
         }
-
-
     }
 }

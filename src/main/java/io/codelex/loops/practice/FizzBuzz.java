@@ -8,19 +8,19 @@ public class FizzBuzz {
         int input = scan.nextInt();
 
         int newLine = 20;
-        for(int i = 1; i <= input; i++) {
+        for (int i = 1; i <= input; i++) {
 
-            if(i % 3 == 0 && i % 5 == 0){
+            if (i % 3 == 0 && i % 5 == 0) {
                 System.out.print("FizzBuzz ");
-            }else if(i % 3 == 0) {
+            } else if (i % 3 == 0) {
                 System.out.print("Fizz ");
-            }else if(i % 5 == 0){
+            } else if (i % 5 == 0) {
                 System.out.print("Buzz ");
-            }else {
+            } else {
                 System.out.print(i + " ");
             }
 
-            if(i == newLine){
+            if (i == newLine) {
                 System.out.print("\n");
                 newLine += 20;
             }

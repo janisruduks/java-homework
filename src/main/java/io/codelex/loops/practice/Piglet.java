@@ -11,14 +11,14 @@ public class Piglet {
         int points = dice;
         System.out.printf("You rolled a %d%n", dice);
 
-        while(dice != 1){
+        while (dice != 1) {
             System.out.print("Roll again? ");
             String question = scan.next();
-            if(question.equalsIgnoreCase("yes") || question.equalsIgnoreCase("y")){
+            if (question.equalsIgnoreCase("yes") || question.equalsIgnoreCase("y")) {
                 dice = randomNumber();
                 points += dice;
                 System.out.printf("You rolled a %d%n", dice);
-            }else {
+            } else {
                 break;
             }
         }

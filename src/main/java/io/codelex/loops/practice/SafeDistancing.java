@@ -18,7 +18,7 @@ public class SafeDistancing {
 
         // task way is faster
         System.out.print(firstWord);
-        for(int i = 0; i < dotsNeeded; i++){
+        for (int i = 0; i < dotsNeeded; i++) {
             System.out.print(".");
         }
         System.out.print(secondWord);

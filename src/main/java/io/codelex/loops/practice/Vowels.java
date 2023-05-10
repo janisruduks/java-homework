@@ -7,14 +7,14 @@ public class Vowels {
         char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 
         // todo - use for
-        for(int i = 0; i < vowels.length; i++){
+        for (int i = 0; i < vowels.length; i++) {
             System.out.print(vowels[i] + " ");
         }
 
         System.out.println();
 
         // todo - use foreach
-        for(char vowel : vowels){
+        for (char vowel : vowels) {
             System.out.print(vowel + " ");
         }
 
