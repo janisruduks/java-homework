@@ -1,5 +1,7 @@
 package io.codelex.typesandvariables.practice;
 
+import io.codelex.custom.Cc;
+
 import java.util.Scanner;
 
 // uses Cc class for colours

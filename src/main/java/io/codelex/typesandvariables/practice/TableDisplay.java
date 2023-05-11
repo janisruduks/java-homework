@@ -1,5 +1,7 @@
 package io.codelex.typesandvariables.practice;
 
+import io.codelex.custom.Cc;
+
 public class TableDisplay {
     public static final String[] COURSES = {"Defense Against the Dark Arts", "Charms", "Potions",
             "Transfiguration", "Arithmancy", "Herbology", "Divination",
