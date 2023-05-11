@@ -1,4 +1,4 @@
-package io.codelex.typesandvariables.practice;
+package io.codelex.custom;
 
 import java.util.Random;
 
