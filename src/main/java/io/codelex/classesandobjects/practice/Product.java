@@ -12,7 +12,7 @@ public class Product {
     }
 
     public void printProduct() {
-        System.out.printf("%s, %.2f EUR, ammount %.0f%n", name, priceAtStart, amountAtStart);
+        System.out.printf("%s, %.2f EUR, amount %.0f%n", name, priceAtStart, amountAtStart);
     }
 
     public void setPriceAtStart(double priceAtStart) {
