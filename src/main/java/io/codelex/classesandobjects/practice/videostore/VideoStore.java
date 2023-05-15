@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VideoStore {
-    private Video rating;
     private final List<Video> inventory;
 
     public VideoStore() {
