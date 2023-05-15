@@ -34,7 +34,11 @@ public class TicTacToe {
     }
 
     private static void playerTurn() {
-        player = (player == 'X') ? 'O' : 'X';
+        if (player == 'X') {
+            player = 'O';
+        } else {
+            player = 'X';
+        }
     }
 
     private static boolean isCellFree(int row, int column) {
