@@ -1,5 +1,7 @@
 package io.codelex.arrays.practice;
 
+import java.util.Arrays;
+
 public class Exercise5 {
 
     //TODO: Write a Java program to find the index of an array element.
@@ -9,21 +11,15 @@ public class Exercise5 {
         int indexOfElement36 = -1;
         int indexOfElement29 = -1;
 
-        /*
-        fixme
-        for (?) {
-            
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] == 29) {
+                indexOfElement29 = i;
+            }
+            if (myArray[i] == 36) {
+                indexOfElement36 = i;
+            }
         }
-        */
-
-        //Expected output:
-        //Index position of 36 is: 4
-        //Index position of 29 is: 8
-        
-        /*
-        fixme
         System.out.println("Index position of 36 is: " + indexOfElement36);
         System.out.println("Index position of 29 is: " + indexOfElement29);
-        */
     }
 }
