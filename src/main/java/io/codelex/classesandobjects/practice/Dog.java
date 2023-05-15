@@ -3,8 +3,8 @@ package io.codelex.classesandobjects.practice;
 import java.util.Objects;
 
 public class Dog {
-    private String name;
-    private String sex;
+    private final String name;
+    private final String sex;
     private String mother;
     private String father;
 

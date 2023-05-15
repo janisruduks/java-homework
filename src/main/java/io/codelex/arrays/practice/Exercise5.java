@@ -1,7 +1,5 @@
 package io.codelex.arrays.practice;
 
-import java.util.Arrays;
-
 public class Exercise5 {
 
     //TODO: Write a Java program to find the index of an array element.
