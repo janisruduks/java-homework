@@ -36,7 +36,7 @@ public class VideoStoreTest {
     private static void fillVideoStore(Scanner scanner) {
         for (int i = 0; i < COUNT_OF_MOVIES; i++) {
             System.out.println("Enter movie name");
-            scanner.nextLine(); // to fix String cutting of by space
+            scanner.nextLine(); // to fix String cutting off by space
             String movieName = scanner.nextLine();
 
             System.out.println("Enter rating");
@@ -51,11 +51,10 @@ public class VideoStoreTest {
 
         System.out.print("\nEnter title of the movie: ");
         scanner.nextLine();
-        String movieTitle = scanner.nextLine();
+        String movieTitle = validateMovieTitle(scanner.nextLine(), scanner);
         store.rentVideo(movieTitle);
 
-        System.out.println("You successfully rented: " + movieTitle);
-        System.out.println("Thanks for renting with us!\n");
+        thankCustomer(movieTitle);
     }
 
     private static void returnVideo(Scanner scanner) {
@@ -63,11 +62,10 @@ public class VideoStoreTest {
 
         System.out.print("\nEnter title of the movie: ");
         scanner.nextLine();
-        String movieTitle = scanner.nextLine();
+        String movieTitle = validateMovieTitle(scanner.nextLine(), scanner);
         store.returnVideo(movieTitle);
 
-        System.out.println("You successfully returned: " + movieTitle);
-        System.out.println("Thanks for renting with us!\n");
+        thankCustomer(movieTitle);
     }
 
     private static void rateVideo(Scanner scanner) {
@@ -76,13 +74,28 @@ public class VideoStoreTest {
 
         System.out.print("\nEnter title of the movie: ");
         scanner.nextLine();
-        String movieTitle = scanner.nextLine();
+        String movieTitle = validateMovieTitle(scanner.nextLine(), scanner);
 
         System.out.print("Enter rating (1-10): ");
         int rating = scanner.nextInt();
         store.rateVideo(movieTitle, rating);
         System.out.println(store.findVideo(movieTitle));
+
+        thankCustomer(movieTitle);
+    }
+
+    private static void thankCustomer(String movieTitle) {
         System.out.println("You successfully rated: " + movieTitle);
         System.out.println("Thanks for renting with us!\n");
+    }
+
+    private static String validateMovieTitle(String movieTitle, Scanner scanner) {
+        while (store.findVideo(movieTitle) == null) {
+            System.out.println("ERROR: Invalid movie title, please try again");
+            store.getInventory();
+            System.out.print("I better not see a mistake again... : ");
+            movieTitle = scanner.nextLine();
+        }
+        return movieTitle;
     }
 }

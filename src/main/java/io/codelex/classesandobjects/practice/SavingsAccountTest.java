@@ -16,16 +16,14 @@ public class SavingsAccountTest {
         System.out.print("How long has the account been opened? ");
         int repeat = in.nextInt();
         for (int i = 1; i <= repeat; i++) {
-
             System.out.printf("Enter amount deposited for month %d: ", i);
             account.deposit(in.nextDouble());
+
             System.out.printf("Enter amount withdrawn for %d: ", i);
             account.withdraw(in.nextDouble());
 
             account.addMonthlyInterest();
         }
-
-        in.close();
 
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         System.out.println("Total deposited: " + currency.format(account.getTotalDeposited()));

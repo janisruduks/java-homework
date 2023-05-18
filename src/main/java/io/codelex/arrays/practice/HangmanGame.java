@@ -5,7 +5,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HangmanGame {
-    private static final String[] WORDS = {"hell", "midnight", "string", "boom", "idontknowhowtocode"};
+    private static final String[] WORDS = {
+            "hell", "midnight", "string", "boom", "idontknowhowtocode",
+            "bigdecimal", "java", "baseball"
+    };
     private static String wordToGuess = getWord();
     private static String emptyWord = getEmptyWord(wordToGuess);
     private static String letterMisses = "";

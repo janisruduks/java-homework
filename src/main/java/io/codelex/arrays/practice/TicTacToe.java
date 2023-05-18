@@ -3,41 +3,45 @@ package io.codelex.arrays.practice;
 import java.util.Scanner;
 
 public class TicTacToe {
-
     private static final char[][] GAME_BOARD = new char[3][3];
-    private static char player = 'X';
+    private static char PLAYER = 'X';
 
     public static void main(String[] args) {
         Scanner keyGAME_BOARD = new Scanner(System.in);
         initBoard();
 
         while (!getWinner() && !isTie()) {
-            System.out.print("'" + player + "' , choose your location  (row, column): ");
-
+            System.out.print("'" + PLAYER + "' , choose your location  (row, column): ");
             int rowXO = keyGAME_BOARD.nextInt();
             int columnXO = keyGAME_BOARD.nextInt();
 
-            insertXO(rowXO, columnXO);
-
+            validateInput(rowXO, columnXO);
             displayBoard();
         }
-
     }
 
     private static void insertXO(int row, int column) {
         if (isCellFree(row, column)) {
             System.out.println("ERROR: " + row + " " + column + " Place is taken");
         } else {
-            GAME_BOARD[row][column] = player;
+            GAME_BOARD[row][column] = PLAYER;
             playerTurn();
         }
     }
 
-    private static void playerTurn() {
-        if (player == 'X') {
-            player = 'O';
+    private static void validateInput(int row, int column) {
+        if (row <= 2 && row >= 0 && column <= 2 && column >= 0) {
+            insertXO(row, column);
         } else {
-            player = 'X';
+            System.out.println("ERROR: Wrong input buddy...");
+        }
+    }
+
+    private static void playerTurn() {
+        if (PLAYER == 'X') {
+            PLAYER = 'O';
+        } else {
+            PLAYER = 'X';
         }
     }
 
@@ -57,16 +61,13 @@ public class TicTacToe {
             System.out.println(GAME_BOARD[0][2] + " won.");
             return true;
         }
-        // Rows
+        // Rows and columns
         for (int i = 0; i < 3; i++) {
             if (GAME_BOARD[i][0] == GAME_BOARD[i][1] &&
                     GAME_BOARD[i][1] == GAME_BOARD[i][2] && GAME_BOARD[i][0] != '.') {
                 System.out.println(GAME_BOARD[i][0] + " won.");
                 return true;
             }
-        }
-        // Columns
-        for (int i = 0; i < 3; i++) {
             if (GAME_BOARD[0][i] == GAME_BOARD[1][i] &&
                     GAME_BOARD[1][i] == GAME_BOARD[2][i] && GAME_BOARD[0][i] != '.') {
                 System.out.println(GAME_BOARD[0][i] + " won.");
