@@ -19,7 +19,6 @@ public class Movie {
 
     public Movie[] getPG(Movie[] movies) {
         Movie[] pgMovies = new Movie[movies.length + 1];
-
         int counter = 0;
 
         for (Movie movie : movies) {

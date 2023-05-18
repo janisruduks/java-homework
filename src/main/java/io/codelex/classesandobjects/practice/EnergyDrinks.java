@@ -8,7 +8,6 @@ public class EnergyDrinks {
     public static void main(String[] args) {
         double energyDrinkers = calculateEnergyDrinkers(NUMBER_SURVEYED);
         double preferCitrus = calculatePreferCitrus((int) energyDrinkers);
-        //fixme
         System.out.println("Total number of people surveyed " + NUMBER_SURVEYED);
         System.out.println("Approximately " + energyDrinkers + " bought at least one energy drink");
         System.out.println(preferCitrus + " of those " + "prefer citrus flavored energy drinks.");

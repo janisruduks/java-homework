@@ -4,27 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VideoStore {
-    private final List<Video> inventory;
-
-    public VideoStore() {
-        inventory = new ArrayList<>();
-    }
+    private final List<Video> inventory = new ArrayList<>();
 
     public void rentVideo(String title) {
         Video movie = findVideo(title);
-
         movie.setCheckIn();
     }
 
     public void returnVideo(String title) {
         Video movie = findVideo(title);
-
         movie.setCheckOut();
     }
 
     public void rateVideo(String title, int rating) {
         Video movie = findVideo(title);
-
         movie.addVideoRating(rating);
     }
 
