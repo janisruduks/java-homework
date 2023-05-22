@@ -85,7 +85,7 @@ public class VideoStoreTest {
     }
 
     private static void thankCustomer(String movieTitle) {
-        System.out.println("You successfully rated: " + movieTitle);
+        System.out.println("Action was successfully: " + movieTitle);
         System.out.println("Thanks for renting with us!\n");
     }
 

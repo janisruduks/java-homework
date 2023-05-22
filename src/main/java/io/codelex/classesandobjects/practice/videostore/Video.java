@@ -3,14 +3,14 @@ package io.codelex.classesandobjects.practice.videostore;
 public class Video {
     private final String title;
     private boolean isVideoAvailable = true;
-    private int videoRating;
+    private double videoRating;
 
     public Video(String title, int videoRating) {
         this.title = title;
         this.videoRating = videoRating;
     }
 
-    public void addVideoRating(int rating) {
+    public void addVideoRating(double rating) {
         this.videoRating = (this.videoRating + rating) / 2;
     }
 
