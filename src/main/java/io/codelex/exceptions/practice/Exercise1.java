@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Exercise1 {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
-
         while (true) {
             System.out.println("Enter the numerator");
             int numerator = scanner.nextInt();

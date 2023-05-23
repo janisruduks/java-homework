@@ -8,13 +8,20 @@ public enum RockPaperScissors {
     SCISSORS("Scissors", "Paper");
 
     private static final Random RNG = new Random();
-
     private final String name;
     private final String beats;
 
     RockPaperScissors(String name, String beats) {
         this.name = name;
         this.beats = beats;
+    }
+
+    public String getBeats() {
+        return beats;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public static RockPaperScissors randomizeTurn() {
