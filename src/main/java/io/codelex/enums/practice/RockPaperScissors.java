@@ -16,16 +16,16 @@ public enum RockPaperScissors {
         this.beats = beats;
     }
 
+    public static RockPaperScissors randomizeTurn() {
+        RockPaperScissors[] rockPaperScissors = values();
+        return rockPaperScissors[RNG.nextInt(rockPaperScissors.length)];
+    }
+
     public String getBeats() {
         return beats;
     }
 
     public String getName() {
         return name;
-    }
-
-    public static RockPaperScissors randomizeTurn() {
-        RockPaperScissors[] rockPaperScissors = values();
-        return rockPaperScissors[RNG.nextInt(rockPaperScissors.length)];
     }
 }

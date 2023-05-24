@@ -19,26 +19,26 @@ public class RockPapersScissorsGame {
                 case "p" -> getWinner(RockPaperScissors.PAPER);
                 case "r" -> getWinner(RockPaperScissors.ROCK);
                 case "q" -> displayScoreAndQuit();
+                default -> System.out.println("Error: wrong input");
             }
         }
     }
 
-    private static void getWinner(RockPaperScissors playerAttribute) {
-        RockPaperScissors pcAttribute = RockPaperScissors.randomizeTurn();
-        String pc = pcAttribute.getName();
-        String pcBeats = pcAttribute.getBeats();
-        String player = playerAttribute.getName();
-        String playerBeats = playerAttribute.getBeats();
+    private static void getWinner(RockPaperScissors playerTurn) {
+        RockPaperScissors pcTurn = RockPaperScissors.randomizeTurn();
+        String pc = pcTurn.getName();
+        String pcBeats = pcTurn.getBeats();
+        String player = playerTurn.getName();
+        String playerBeats = playerTurn.getBeats();
+
         System.out.println("My turn: " + pc);
         turns++;
         if (pc.equals(player)) {
             System.out.println("It's a tie");
-        }
-        else if (pcBeats.equals(player)) {
+        } else if (pcBeats.equals(player)) {
             System.out.println("You lost");
             pcWins++;
-        }
-        else if (playerBeats.equals(pc)) {
+        } else if (playerBeats.equals(pc)) {
             userWins++;
             System.out.println("You won");
         }
@@ -47,7 +47,7 @@ public class RockPapersScissorsGame {
     private static void displayScoreAndQuit() {
         double procUser = (userWins / turns) * 100;
         double procPc = (pcWins / turns) * 100;
-        System.out.println("Out of " + turns);
+        System.out.println("Out of " + turns + " games.");
         System.out.printf("I won %.2f%% times. ", procPc);
         System.out.printf("You won %.2f%% times.", procUser);
         System.out.println("\nBye!");
