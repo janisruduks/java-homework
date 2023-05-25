@@ -13,7 +13,7 @@ public class Exercise4 {
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Enter number as first parameter.");
         } catch (NonPositiveNumberException e) {
-            System.out.println("Result will be imaginary number.");
+            System.out.println(e.getMessage());
         }
     }
 

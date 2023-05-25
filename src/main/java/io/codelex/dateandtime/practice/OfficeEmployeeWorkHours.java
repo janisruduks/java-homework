@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class OfficeEmployeeWorkHours {
-    private static final int HOURS_WORK_A_DAY = 8;
+    private static final int WORK_HOURS = 8;
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
@@ -20,7 +20,7 @@ public class OfficeEmployeeWorkHours {
 
         int workingDays = calculateWorkingDays(startDate, endDate);
         System.out.println("Number of hours I was debugging this code in the office - "
-                + workingDays * HOURS_WORK_A_DAY + "h");
+                + workingDays * WORK_HOURS + "h");
     }
 
     private static int[] formatInputDates(Scanner keyboard) {
