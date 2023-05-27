@@ -1,6 +1,8 @@
 package io.codelex.collections.practice.lists;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @SuppressWarnings("Duplicates")
@@ -19,6 +21,8 @@ public class ArrayListExercise8 {
 
         //TODO: Sort array list
         //Collections....
+        //colors.sort(Comparator.naturalOrder());
+        Collections.sort(colors);
 
         System.out.println("List after sort: " + colors);
     }

@@ -13,32 +13,25 @@ public class HashMapExercise1 {
         myMap.put(4, "White");
         myMap.put(5, "Blue");
 
-        //TODO: Print size of myMap
-        //System.out.println("Size of the hash map: " + ...);
+        System.out.println("Size of the hash map: " + myMap.size());
 
-        //TODO: Check if myMap contains key 3
-        //if (?) {
-        //  System.out.println("Contains! :)");
-        //} else {
-        //  System.out.println("Does not contains. :(");
-        //}
+        if (myMap.containsKey(3)) {
+            System.out.println("Contains! :" + ")".repeat(myMap.size()));
+        } else {
+            System.out.println("It does not contain :(");
+        }
 
-        //TODO: Check if myMap contains value "White"
-        //if (?) {
-        //  System.out.println("Contains! :)");
-        //} else {
-        //  System.out.println("Does not contains. :(");
-        //}
+        if (myMap.containsValue("White")) {
+            System.out.println("Contains! :" + ")".repeat(myMap.size()));
+        } else {
+            System.out.println("It does not contain. :(");
+        }
 
-        //TODO: Create new map and clone values from myMap into new map
-        //...
+        Map<Integer, String> newMap = new HashMap<>(myMap);
 
-        //TODO: Iterate over map entries and print keys and values of each entry
-        //for(Map.Entry entry: myMap.entrySet()){
-        //  System.out.println(?);
-        //}
+        myMap.forEach((i, s) -> System.out.println(i + " : " + s));
 
-        //TODO: Clear myMap
+        myMap.clear();
         System.out.println("Hash map after clearing: " + myMap);
     }
 

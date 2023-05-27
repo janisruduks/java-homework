@@ -18,9 +18,15 @@ public class ArrayListExercise4 {
         //fixme
         //String element = ...;
         //System.out.println("First element: " + element);
+        String element = colors.get(0);
+        System.out.println("First element: " + element);
+
 
         //fixme
         //element = ...;
         //System.out.println("Third element: " + element);
+
+        String element2 = colors.get(2);
+        System.out.println("Third element: " + element2);
     }
 }

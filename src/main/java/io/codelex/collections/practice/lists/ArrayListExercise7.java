@@ -14,6 +14,12 @@ public class ArrayListExercise7 {
         colors.add("White");
         colors.add("Black");
 
+        if (colors.contains("White")) {
+            System.out.println("Found the element.");
+        } else {
+            System.out.println("There is no such element.");
+        }
+
 //      TODO: Check if list contains "White" element
 //        if (...) {
 //            System.out.println("Found the element");
