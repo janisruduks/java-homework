@@ -41,4 +41,5 @@ public class HashMapExercise1 {
         //TODO: Clear myMap
         System.out.println("Hash map after clearing: " + myMap);
     }
+
 }
