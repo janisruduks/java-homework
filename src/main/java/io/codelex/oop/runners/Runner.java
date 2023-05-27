@@ -3,7 +3,7 @@ package io.codelex.oop.runners;
 public enum Runner {
     BEGINNER(120, 180),
     INTERMEDIATE(80, 119),
-    ADVANCED(40, 79);
+    ADVANCED(0, 79);
 
     private final int minimumRunningTime;
     private final int maximumRunningTime;
