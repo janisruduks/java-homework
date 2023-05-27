@@ -1,6 +1,7 @@
 package io.codelex.dateandtime.practice;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class ServerTimeUpdate {
@@ -8,15 +9,10 @@ public class ServerTimeUpdate {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Please enter server date start.");
-        System.out.print("Year : ");
-        int year = in.nextInt();
-        System.out.print("Month : ");
-        int month = in.nextInt();
-        System.out.print("Day : ");
-        int day = in.nextInt();
+        System.out.println("Please enter server date start. In such format yyyy/mm/dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate serverStartingDate = LocalDate.parse(in.nextLine(), formatter);
 
-        LocalDate serverStartingDate = LocalDate.of(year, month, day);
         LocalDate nextServerUpdate = nextServerUpdate(serverStartingDate);
         System.out.println("Server must be updated on - " + nextServerUpdate);
 
@@ -27,7 +23,6 @@ public class ServerTimeUpdate {
             System.out.print("Server should be update second time this month - ");
             System.out.println(nextUpdateInSameMonth);
         }
-
     }
 
     private static LocalDate nextServerUpdate(LocalDate serverStartingDate) {

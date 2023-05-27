@@ -2,6 +2,8 @@ package io.codelex.dateandtime.practice;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Scanner;
 
 public class OfficeEmployeeWorkHours {
@@ -11,25 +13,15 @@ public class OfficeEmployeeWorkHours {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Welcome to office worker hour calculator!");
         System.out.println("Please enter start date year/month/day in such format.");
-        int[] start = formatInputDates(keyboard);
-        LocalDate startDate = LocalDate.of(start[0], start[1], start[2]);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate startDate = LocalDate.parse(keyboard.nextLine(), formatter);
 
         System.out.println("Please enter end date year/month/day in such format.");
-        int[] end = formatInputDates(keyboard);
-        LocalDate endDate = LocalDate.of(end[0], end[1], end[2]);
+        LocalDate endDate = LocalDate.parse(keyboard.nextLine(), formatter);
 
         int workingDays = calculateWorkingDays(startDate, endDate);
         System.out.println("Number of hours I was debugging this code in the office - "
                 + workingDays * WORK_HOURS + "h");
-    }
-
-    private static int[] formatInputDates(Scanner keyboard) {
-        String[] dateValues = keyboard.nextLine().split("/");
-        int[] numberFormatDates = new int[3];
-        for (int i = 0; i < dateValues.length; i++) {
-            numberFormatDates[i] = Integer.parseInt(dateValues[i]);
-        }
-        return numberFormatDates;
     }
 
     public static int calculateWorkingDays(LocalDate startDate, LocalDate endDate) {
