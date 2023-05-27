@@ -29,7 +29,7 @@ public class CarAndManufacturerTest {
         CarService papaJohns = new CarService(cars);
 
         System.out.println(papaJohns.sortCars(Car::getPrice, Order.ASCENDING));
-        System.out.println(papaJohns.sortCars(Car::getPrice, Order.DESCENDING));
+        System.out.println(papaJohns.sortCars(Car::getProductionYear, Order.DESCENDING));
 
 
         System.out.println("\nCars with three manufacturers: " + papaJohns.getCarWithThreeManufacturers());

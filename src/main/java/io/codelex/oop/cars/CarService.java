@@ -70,13 +70,12 @@ public class CarService {
     }
 
     public <T extends Comparable<T>> List<Car> sortCars(Function<Car, T> KeyExtractor, Order order) {
-        List<Car> sortedCars = new ArrayList<>(cars);
         Comparator<Car> comparator = Comparator.comparing(KeyExtractor);
         if (order == Order.DESCENDING) {
             comparator = comparator.reversed();
         }
-        sortedCars.sort(comparator);
-        return sortedCars;
+        cars.sort(comparator);
+        return cars;
     }
 
     public List<Car> getCarsByManufacturerYear(int year, BiPredicate<Integer, Integer> comparator) {
