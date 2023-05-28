@@ -42,7 +42,6 @@ public class FlightPlanner {
                 break;
             }
             routeOrganizer(keyboard);
-
         }
     }
 
@@ -114,11 +113,7 @@ public class FlightPlanner {
         HashMap<String, List<String>> cities = new HashMap<>();
         flightList.forEach(element -> {
             String[] elementSplit = element.split(" -> ");
-            cities.put(elementSplit[0], new ArrayList<>());
-        });
-        flightList.forEach(element -> {
-            String[] elementSplit = element.split(" -> ");
-            cities.get(elementSplit[0]).add(elementSplit[1]);
+            cities.computeIfAbsent(elementSplit[0], k -> new ArrayList<>()).add(elementSplit[1]);
         });
         return cities;
     }
