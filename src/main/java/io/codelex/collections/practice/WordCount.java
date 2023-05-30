@@ -18,9 +18,7 @@ public class WordCount {
         List<String> text = Files.readAllLines(path, charset);
 
         System.out.println("Lines = " + text.size());
-
         System.out.println("Words = " + getWordCount(text));
-
         System.out.println("Chars = " + getCharacterCount(text));
     }
 
