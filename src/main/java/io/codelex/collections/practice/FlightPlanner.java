@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class FlightPlanner {
     private static final Charset charset = Charset.defaultCharset();
@@ -36,28 +35,28 @@ public class FlightPlanner {
 
     private static void routeStart(Scanner keyboard) {
         while (true) {
+            visitedCities.clear();
             System.out.println("To select a city from which you would like to start press 1");
             String option = keyboard.next().toLowerCase();
             if (!option.equals("1")) {
                 break;
+            } else {
+                displayCities();
+                System.out.println("Select city by typing city number: ");
+                int cityIndex = keyboard.nextInt();
+                String chosenCity = getCityName(cityIndex);
+                List<String> destinations = displayFlightsFromCity(chosenCity);
+                countCities(chosenCity);
+                routeOrganizer(keyboard, destinations);
             }
-            routeOrganizer(keyboard);
         }
     }
 
-    private static void routeOrganizer(Scanner keyboard) {
-        displayCities();
-        System.out.println("Select city by typing city number: ");
-        String cityIndex = keyboard.next();
-        int parsedIndex = Integer.parseInt(cityIndex);
-        String chosenCity = getCityName(parsedIndex);
-        List<String> destinations = displayFlightsFromCity(chosenCity);
-        countCities(chosenCity);
+    private static void routeOrganizer(Scanner keyboard, List<String> destinations) {
         while (true) {
             System.out.println("Select next city by typing city number: ");
-            cityIndex = keyboard.next();
-            parsedIndex = Integer.parseInt(cityIndex);
-            chosenCity = getCityNameFromDestinations(destinations, parsedIndex);
+            int cityIndex = keyboard.nextInt();
+            String chosenCity = getCityNameFromDestinations(destinations, cityIndex);
             destinations = displayFlightsFromCity(chosenCity);
             countCities(chosenCity);
             if (visitedCities.get(visitedCities.size() - 1).equals(visitedCities.get(0))) {
@@ -81,19 +80,19 @@ public class FlightPlanner {
     }
 
     private static void displayCities() {
-        AtomicInteger counter = new AtomicInteger(1);
+        int[] counter = {1};
         citiesAndDestinations.forEach((k, v) -> {
-            System.out.println(counter + ". " + k);
-            counter.incrementAndGet();
+            System.out.println(counter[0] + ". " + k);
+            counter[0] += 1;
         });
     }
 
     private static List<String> displayFlightsFromCity(String city) {
-        AtomicInteger counter = new AtomicInteger(1);
         List<String> flightsFromCity = new ArrayList<>(citiesAndDestinations.get(city));
+        int[] counter = {1};
         flightsFromCity.forEach(elem -> {
-            System.out.println(counter + ". " + elem);
-            counter.incrementAndGet();
+            System.out.println(counter[0] + ". " + elem);
+            counter[0] += 1;
         });
         return flightsFromCity;
     }
