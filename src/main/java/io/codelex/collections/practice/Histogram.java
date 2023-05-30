@@ -18,10 +18,12 @@ public class Histogram {
         final String scores = fileContent();
         String[] numbers = scores.split(" ");
         createHistogram(numbers);
+        HashMap<Range<Integer>, String> histogram = createHistogram(numbers);
+        displayHistogram(histogram);
     }
 
-    private static void createHistogram(String[] scores) {
-        HashMap<Range<Integer>, String> histogram = new LinkedHashMap<>();
+    private static HashMap<Range<Integer>, String> createHistogram(String[] scores) {
+        LinkedHashMap<Range<Integer>, String> histogram = new LinkedHashMap<>();
         int start = 0;
         int end = 9;
         for (int i = 0; i < 11; i++) {
@@ -37,8 +39,7 @@ public class Histogram {
                 }
             });
         }
-
-        displayHistogram(histogram);
+        return histogram;
     }
 
     private static void displayHistogram(HashMap<Range<Integer>, String> histogram) {
