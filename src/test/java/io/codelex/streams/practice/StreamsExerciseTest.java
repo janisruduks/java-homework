@@ -114,7 +114,7 @@ public class StreamsExerciseTest {
         User maggie = new User("Maggie", false);
         User lisa = new User("Lisa", false);
         List<User> input = asList(homer, bart, maggie, lisa);
-        Map<Boolean, List<User>> result = StreamsExercise.partionUsersByGender(input);
+        Map<Boolean, List<User>> result = StreamsExercise.portionUsersByGender(input);
         assertThat(result.get(true), Matchers.containsInAnyOrder(homer, bart));
         assertThat(result.get(false), Matchers.containsInAnyOrder(maggie, lisa));
     }
