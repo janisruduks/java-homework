@@ -18,10 +18,10 @@ public class RotCipher {
 
     }
 
-    private static void rotEncrypt(int rot, String encryptedText) {
+    private static void rotEncrypt(int rot, String plainText) {
         StringBuilder decryptedText = new StringBuilder();
 
-        char[] encryptedTextArray = encryptedText.toCharArray();
+        char[] encryptedTextArray = plainText.toCharArray();
 
         for (char letter : encryptedTextArray) {
 
