@@ -7,39 +7,37 @@ public class RotCipher {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Welcome!");
-        System.out.println("To encrypt your message choose rotation between 1 - 25");
-        int rot = in.nextInt();
-        System.out.println("and type text you want to encrypt.");
-        in.nextLine();
-        String text = in.nextLine();
-        rotEncrypt(rot, text);
-
+        System.out.println("Welcome ROT cipher encoder and decoder");
+        System.out.println("Enter text you want to encrypt or decrypt.");
+        rotateText(in.nextLine());
 
     }
 
-    private static void rotEncrypt(int rot, String plainText) {
-        StringBuilder decryptedText = new StringBuilder();
+    private static void rotateText(String plainText) {
+        StringBuilder rotatedText = new StringBuilder();
 
-        char[] encryptedTextArray = plainText.toCharArray();
+        char[] plainTextCharArray = plainText.toCharArray();
 
-        for (char letter : encryptedTextArray) {
+        for (int i = 0; i <= 25; i++) {
 
-            if (Character.isUpperCase(letter) && letter + rot > '[') {
-                int newLetter = Math.abs('Z' - letter - rot) + '@';
-                letter = (char) newLetter;
+            for (char letter : plainTextCharArray) {
 
-            } else if (Character.isLowerCase(letter) && letter + rot > '{') {
-                int newLetter = Math.abs('z' - letter - rot) + '`';
-                letter = (char) newLetter;
+                if (Character.isUpperCase(letter) && letter + i >= '[') {
+                    int newLetter = Math.abs('Z' - letter - i) + '@';
+                    letter = (char) newLetter;
 
-            } else if (Character.isAlphabetic(letter)) {
-                letter = (char) (letter + rot);
+                } else if (Character.isLowerCase(letter) && letter + i >= '{') {
+                    int newLetter = Math.abs('z' - letter - i) + '`';
+                    letter = (char) newLetter;
+
+                } else if (Character.isAlphabetic(letter)) {
+                    letter = (char) (letter + i);
+                }
+                rotatedText.append(letter);
             }
-            decryptedText.append(letter);
+            System.out.println("ROT" + i + ": " + rotatedText);
+            rotatedText = new StringBuilder();
         }
-        System.out.println("Your encrypted message ROT" + rot + ": " + decryptedText);
     }
-
 
 }
