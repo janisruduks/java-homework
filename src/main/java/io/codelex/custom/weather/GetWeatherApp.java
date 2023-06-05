@@ -7,31 +7,34 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 
-public class getWeatherApp {
+public class GetWeatherApp {
     public static void main(String[] args) {
 
         System.out.println("Trying to get your ip address...");
         Optional<IPResponse> optionalIPResponse = getIPResponse();
 
-        optionalIPResponse.ifPresent(ipData -> {
+        optionalIPResponse.ifPresentOrElse(ipData -> {
             Optional<LocationResponse> locationResponse = getLocationResponse(ipData.getIp());
 
             System.out.println("...Got your ip! " + ipData.getIp());
             System.out.println("Trying to get your location...");
 
-            locationResponse.ifPresent(locationData -> {
+            locationResponse.ifPresentOrElse(locationData -> {
                 Optional<WeatherResponse> weatherResponse = getWeatherResponse(locationData.getLat(), locationData.getLon());
 
                 String city = locationData.getCity();
                 System.out.println("...Got ip location! " + city);
 
-                weatherResponse.ifPresent(weatherData -> {
+                weatherResponse.ifPresentOrElse(weatherData -> {
                     System.out.println("...Got weather data!");
                     String weather = weatherData.getWeatherData();
                     System.out.println("Weather today in " + city + " is " + weather + "°C");
-                });
-            });
-        });
+                },
+                        () -> System.out.println("Could not get weather data..."));
+            },
+                    () -> System.out.println("Could not get location data..."));
+        },
+                () -> System.out.println("Could not get IP address..."));
     }
 
 
