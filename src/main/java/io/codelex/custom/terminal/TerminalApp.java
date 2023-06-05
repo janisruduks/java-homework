@@ -1,7 +1,7 @@
 package io.codelex.custom.terminal;
 
-import org.example.terminal.Folder;
-import org.example.terminal.Terminal;
+import io.codelex.custom.terminal.terminal.Folder;
+import io.codelex.custom.terminal.terminal.Terminal;
 
 import java.util.Scanner;
 
