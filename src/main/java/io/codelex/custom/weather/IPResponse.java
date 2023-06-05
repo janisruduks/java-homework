@@ -1,19 +1,15 @@
 package io.codelex.custom.weather;
 
-public class GetIP {
+public class IPResponse {
     private String ip;
 
-    public GetIP(String ip) {
+    public IPResponse(String ip) {
         this.ip = ip;
     }
 
-    public GetIP() {}
+    public IPResponse() {}
 
     public String getIp() {
         return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
     }
 }
