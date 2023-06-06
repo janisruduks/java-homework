@@ -13,22 +13,16 @@ public class GetWeatherApp {
 
         System.out.println("Trying to get your ip address...");
         getIPResponse().ifPresent(ipData -> {
-            System.out.println(PrettifyOutput.chooseColour(
-                    "...Got your ip! " + ipData.getIp(), PrettifyOutput.GREEN
-            ));
+            System.out.println("...Got your ip! " + ipData.getIp());
 
             System.out.println("Trying to get your location...");
             getLocationResponse(ipData.getIp()).ifPresent(locationData -> {
-                System.out.println(PrettifyOutput.chooseColour(
-                        "...Got ip location! " + locationData.getCity(), PrettifyOutput.GREEN
-                ));
+                System.out.println("...Got ip location! " + locationData.getCity());
 
                 System.out.println("Trying to get weather data...");
                 getWeatherResponse(locationData.getLat(), locationData.getLon()).ifPresent(weatherData -> {
 
-                    System.out.println(PrettifyOutput.chooseColour(
-                            "...Got weather data!", PrettifyOutput.GREEN
-                    ));
+                    System.out.println("...Got weather data!");
                     System.out.println("Weather today in "
                             + locationData.getCity() + " is "
                             + weatherData.getTemperature() + "°C"
@@ -62,7 +56,7 @@ public class GetWeatherApp {
             return Optional.ofNullable(getObjectMapper()
                     .readValue(new URL(url), response));
         } catch (IOException e) {
-            System.out.println(PrettifyOutput.chooseColour("Error: " + e.getMessage(), PrettifyOutput.RED));
+            System.out.println("Error: " + e.getMessage());
         }
         return Optional.empty();
     }
