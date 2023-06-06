@@ -26,11 +26,11 @@ public class BinaryGuessGame {
 
     private static void guessTheNumber(Scanner keyboard) {
 
-        int magicNumber = 10000 / 2;
-        int binaryMagic = magicNumber;
+        double magicNumber = 10000.0 / 2;
+        double binaryMagic = magicNumber;
 
         for (int i = 0; i < 15; i++) {
-            System.out.println("Is your number higher 'h' or lower 'l' than " + binaryMagic);
+            System.out.println("Is your number higher 'h' or lower 'l' than " + Math.round(binaryMagic));
             System.out.println("Or if I guessed type 'CHAD'");
             String answer = keyboard.next().toLowerCase();
             magicNumber = magicNumber / 2;
@@ -52,6 +52,4 @@ public class BinaryGuessGame {
             System.out.println(message);
         }
     }
-
-
 }
