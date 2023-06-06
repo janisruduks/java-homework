@@ -19,7 +19,8 @@ public class WeatherResponse {
         return currentWeather;
     }
 
-    public String getWeatherData() {
+    public String getTemperature() {
         return currentWeather.get("temperature");
     }
+
 }

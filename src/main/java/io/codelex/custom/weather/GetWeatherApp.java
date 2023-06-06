@@ -2,6 +2,7 @@ package io.codelex.custom.weather;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.codelex.custom.prettifyconsole.PrettifyOutput;
 
 import java.io.IOException;
 import java.net.URL;
@@ -11,30 +12,30 @@ public class GetWeatherApp {
     public static void main(String[] args) {
 
         System.out.println("Trying to get your ip address...");
-        Optional<IPResponse> optionalIPResponse = getIPResponse();
+        getIPResponse().ifPresent(ipData -> {
+            System.out.println(PrettifyOutput.chooseColour(
+                    "...Got your ip! " + ipData.getIp(), PrettifyOutput.GREEN
+            ));
 
-        optionalIPResponse.ifPresentOrElse(ipData -> {
-            Optional<LocationResponse> locationResponse = getLocationResponse(ipData.getIp());
-
-            System.out.println("...Got your ip! " + ipData.getIp());
             System.out.println("Trying to get your location...");
+            getLocationResponse(ipData.getIp()).ifPresent(locationData -> {
+                System.out.println(PrettifyOutput.chooseColour(
+                        "...Got ip location! " + locationData.getCity(), PrettifyOutput.GREEN
+                ));
 
-            locationResponse.ifPresentOrElse(locationData -> {
-                Optional<WeatherResponse> weatherResponse = getWeatherResponse(locationData.getLat(), locationData.getLon());
+                System.out.println("Trying to get weather data...");
+                getWeatherResponse(locationData.getLat(), locationData.getLon()).ifPresent(weatherData -> {
 
-                String city = locationData.getCity();
-                System.out.println("...Got ip location! " + city);
-
-                weatherResponse.ifPresentOrElse(weatherData -> {
-                    System.out.println("...Got weather data!");
-                    String weather = weatherData.getWeatherData();
-                    System.out.println("Weather today in " + city + " is " + weather + "°C");
-                },
-                        () -> System.out.println("Could not get weather data..."));
-            },
-                    () -> System.out.println("Could not get location data..."));
-        },
-                () -> System.out.println("Could not get IP address..."));
+                    System.out.println(PrettifyOutput.chooseColour(
+                            "...Got weather data!", PrettifyOutput.GREEN
+                    ));
+                    System.out.println("Weather today in "
+                            + locationData.getCity() + " is "
+                            + weatherData.getTemperature() + "°C"
+                    );
+                });
+            });
+        });
     }
 
 
@@ -61,7 +62,7 @@ public class GetWeatherApp {
             return Optional.ofNullable(getObjectMapper()
                     .readValue(new URL(url), response));
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println(PrettifyOutput.chooseColour("Error: " + e.getMessage(), PrettifyOutput.RED));
         }
         return Optional.empty();
     }

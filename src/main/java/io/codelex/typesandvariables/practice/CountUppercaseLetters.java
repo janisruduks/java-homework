@@ -1,6 +1,6 @@
 package io.codelex.typesandvariables.practice;
 
-import io.codelex.custom.Cc;
+import io.codelex.custom.prettifyconsole.Old_PrettifyConsole;
 
 import java.util.Scanner;
 
@@ -17,6 +17,6 @@ public class CountUppercaseLetters {
                 sum++;
             }
         }
-        System.out.printf("Your input '%s' has %s uppercase letters", Cc.randomColour(input), Cc.randomColour(sum));
+        System.out.printf("Your input '%s' has %s uppercase letters", Old_PrettifyConsole.randomColour(input), Old_PrettifyConsole.randomColour(sum));
     }
 }
