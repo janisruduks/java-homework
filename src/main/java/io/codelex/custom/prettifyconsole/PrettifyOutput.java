@@ -1,6 +1,6 @@
 package io.codelex.custom.prettifyconsole;
 
-public enum Colors {
+public enum PrettifyOutput {
     RED("\033[0;31m"),
     GREEN("\033[0;32m"),
     YELLOW("\033[0;33m"),
@@ -9,13 +9,13 @@ public enum Colors {
     CYAN("\033[0;36m"),
     RESET("\033[0m");
 
-    public final String COLOUR;
+    public final String colour;
 
-    Colors(String color) {
-        this.COLOUR = color;
+    PrettifyOutput(String color) {
+        this.colour = color;
     }
 
-    public static String chooseColour(String text, Colors color) {
-        return color + text + RESET;
+    public static String chooseColour(String text, PrettifyOutput color) {
+        return color.colour + text + RESET.colour;
     }
 }
