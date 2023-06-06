@@ -1,6 +1,6 @@
 package io.codelex.typesandvariables.practice;
 
-import io.codelex.custom.Cc;
+import io.codelex.custom.prettifyconsole.Old_PrettifyConsole;
 
 public class TableDisplay {
     public static final String[] COURSES = {"Defense Against the Dark Arts", "Charms", "Potions",
@@ -23,8 +23,8 @@ public class TableDisplay {
             spaceCountCourses -= COURSES[i].length();
             spaceCountTeachers -= TEACHERS[i].length();
             System.out.printf("| %s. ( %s%s ) %s%s |%n",
-                    i + 1, space.repeat(spaceCountCourses), Cc.chooseColour(COURSES[i], i),
-                    space.repeat(spaceCountTeachers), Cc.chooseColour(TEACHERS[i], i));
+                    i + 1, space.repeat(spaceCountCourses), Old_PrettifyConsole.chooseColour(COURSES[i], i),
+                    space.repeat(spaceCountTeachers), Old_PrettifyConsole.chooseColour(TEACHERS[i], i));
         }
         System.out.println(star.repeat(22));
     }

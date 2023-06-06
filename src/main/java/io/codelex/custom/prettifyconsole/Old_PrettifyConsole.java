@@ -1,9 +1,9 @@
-package io.codelex.custom;
+package io.codelex.custom.prettifyconsole;
 
 import java.util.Random;
 
 // Please ignore this
-public class Cc {
+public class PrettifyConsole {
     private static final String[] COLOURS = {
             "\033[0;31m", "\033[0;32m", "\033[0;33m",
             "\033[0;34m", "\033[0;35m", "\033[0;36m"
@@ -18,11 +18,8 @@ public class Cc {
     };
     private static final String RESET = "\033[0m";
 
-    public static String chooseColour(String text, int colour) {
-        if (colour < 0 || colour >= COLOURS.length) {
-            colour = 0;
-        }
-        return COLOURS[colour] + text + RESET;
+    public static String chooseColour(String text, Colors colour) {
+        return colour + text + RESET;
     }
 
     public static String chooseColourB(String text, int colour) {
