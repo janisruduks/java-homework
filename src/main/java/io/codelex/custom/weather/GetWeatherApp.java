@@ -2,8 +2,6 @@ package io.codelex.custom.weather;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.codelex.custom.prettifyconsole.PrettifyOutput;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
