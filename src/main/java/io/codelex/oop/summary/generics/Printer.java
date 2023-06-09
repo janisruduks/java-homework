@@ -15,7 +15,7 @@ public class Printer<T> {
         System.out.println(thingToPrint);
     }
 
-    public T getThingToPrint() {
-        return thingToPrint;
+    public String getThingToPrint() {
+        return thingToPrint.toString();
     }
 }
