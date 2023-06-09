@@ -17,7 +17,6 @@ public class TerminalApp {
         terminal.printLogo();
 
         while (true) {
-
             System.out.print(terminal.getPath() + "$ ");
             commands(keyboard, terminal);
 
