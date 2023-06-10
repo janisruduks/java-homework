@@ -9,7 +9,6 @@ public class Cat extends Feline {
         this.breed = breed;
     }
 
-
     @Override
     public void makeSound() {
         System.out.println("Meow Meow");

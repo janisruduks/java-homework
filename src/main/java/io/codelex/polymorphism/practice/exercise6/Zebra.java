@@ -16,9 +16,7 @@ public class Zebra extends Mammal {
         if (food instanceof Vegetable) {
             foodEaten += food.quantity;
         } else {
-            System.out.println(
-                    getClass().getSimpleName() + " are not eating that type of food!"
-            );
+            System.out.println("Zebras are not eating that type of food!");
         }
     }
 

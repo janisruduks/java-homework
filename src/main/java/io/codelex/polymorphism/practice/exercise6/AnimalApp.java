@@ -13,24 +13,20 @@ public class AnimalApp {
         List<Animal> animals = new ArrayList<>();
 
         while (true) {
-
             String animalDetails = keyboard.nextLine();
-            if (animalDetails.equals("End")) {
+            if (animalDetails.equalsIgnoreCase("End")) {
                 break;
             }
             Animal animal = animalFactory(animalDetails);
             animals.add(animal);
             animal.makeSound();
-
             String foodDetails = keyboard.nextLine();
-            if (foodDetails.equals("End")) {
+            if (foodDetails.equalsIgnoreCase("End")) {
                 break;
             }
             animal.eat(foodFactory(foodDetails));
-
             System.out.println(animal);
         }
-
         System.out.println(animals.stream()
                 .map(Animal::toString)
                 .collect(Collectors.joining(", "))
@@ -42,7 +38,6 @@ public class AnimalApp {
         String[] details = foodDetails.split(" ");
         String type = details[0];
         int amount = Integer.parseInt(details[1]);
-
         return switch (type) {
             case "Meat" -> new Meat(amount);
             case "Vegetable" -> new Vegetable(amount);
@@ -61,7 +56,6 @@ public class AnimalApp {
         if (type.equals("Cat")) {
             breed = details[4];
         }
-
         return switch (type) {
             case "Cat" -> new Cat(type, name, weight, region, 0, breed);
             case "Tiger" -> new Tiger(type, name, weight, region, 0);
