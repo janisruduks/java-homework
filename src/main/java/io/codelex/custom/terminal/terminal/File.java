@@ -1,5 +1,7 @@
 package io.codelex.custom.terminal.terminal;
 
+import java.util.Scanner;
+
 public class File extends FileSystemObject {
 
     public File(String name) {
@@ -10,4 +12,19 @@ public class File extends FileSystemObject {
         super(name + ".txt", content);
     }
 
+    public void writeContent(Scanner keyboard) {
+
+        StringBuilder text = new StringBuilder();
+        System.out.println("Welcome to N00bVim, type ':exit' on new line to exit");
+
+        while (true) {
+            String line = keyboard.nextLine();
+            if (line.trim().equals(":exit")) {
+                break;
+            }
+            text.append(line);
+            text.append(System.lineSeparator());
+        }
+        content = text.toString();
+    }
 }

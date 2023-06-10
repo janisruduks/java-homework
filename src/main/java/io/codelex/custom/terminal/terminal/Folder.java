@@ -2,9 +2,11 @@ package io.codelex.custom.terminal.terminal;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class Folder extends FileSystemObject {
-    private Map<String, FileSystemObject> children;
+
+    private final Map<String, FileSystemObject> children;
     private Folder parent;
 
     public Folder(String name, Folder parent) {
@@ -18,12 +20,20 @@ public class Folder extends FileSystemObject {
         this.children = new HashMap<>();
     }
 
-    public void add(FileSystemObject object) {
-        this.children.put(object.getName(), object);
+    public void add(FileSystemObject file) {
+        this.children.put(file.getName(), file);
     }
 
-    public FileSystemObject get(String name) {
+    public FileSystemObject getFileSystemObject(String name) {
         return this.children.get(name);
+    }
+
+    public Optional<File> getFile(String fileName) {
+        FileSystemObject target = children.get(fileName);
+        if (target instanceof File) {
+            return Optional.of(((File) target));
+        }
+        return Optional.empty();
     }
 
     public Folder getParent() {
@@ -45,7 +55,8 @@ public class Folder extends FileSystemObject {
         }
     }
 
-    public FileSystemObject delete(String name) {
-        return this.children.remove(name);
+
+    public void delete(String name) {
+        this.children.remove(name);
     }
 }
