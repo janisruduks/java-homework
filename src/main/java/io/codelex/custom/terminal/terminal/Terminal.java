@@ -7,10 +7,15 @@ import java.util.Scanner;
 public class Terminal {
 
     private Folder currentFolder;
-    private StringBuilder path = new StringBuilder("/root");
+    private StringBuilder path;
+    private String serverName;
+    private String rootFolderName;
 
-    public Terminal(Folder rootFolder) {
+    public Terminal(String serverName, Folder rootFolder, String rootFolderName) {
+        this.serverName = serverName;
         this.currentFolder = rootFolder;
+        this.rootFolderName = rootFolderName;
+        this.path = new StringBuilder("/" + rootFolderName);
     }
 
     public String getPath() {
@@ -71,6 +76,10 @@ public class Terminal {
         } else {
             System.out.println("Couldn't find file with name: " + name);
         }
+    }
+
+    public String getServerName() {
+        return this.serverName;
     }
 
     public void printAllCommands() {

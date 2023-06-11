@@ -24,11 +24,12 @@ public class StringsAndASCIIArt {
         String nobvim = "nobvim 'file name' - Really bad text editor, but you get what you paid for.\n";
         String cat = "cat 'file name' - Prints contents of a specified file.\n";
         String clear = "clear - Clears terminal screen.\n";
+        String connect = "connect 'server name' - Connects to different server";
         String logo = "logo - Shows you cool terminal logo :0\n";
         String exit = "exit() - Kills this sacred program, " +
                 "as you watch it close it's bit eyes, one tear drop runs down... \n" +
                 "'YOU MONSTER' program's children scream at you." +
                 "'Don't you dare to use it' children say";
-        return ls + cd + cd2 + mkdir + rm + touch + nobvim + touch + cat + clear + logo + exit;
+        return ls + cd + cd2 + mkdir + rm + touch + nobvim + touch + cat + clear + connect + logo + exit;
     }
 }
