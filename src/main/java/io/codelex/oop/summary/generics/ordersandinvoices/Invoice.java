@@ -11,6 +11,7 @@ public class Invoice {
     private final double priceWithVAT;
     private final double VAT = 0.21;
     private InvoiceStatus invoiceStatus;
+    private final int WIDTH = 50;
 
     public Invoice(Order order, String invoiceNumber) throws WrongOrderException {
         this.order = order;
@@ -25,36 +26,29 @@ public class Invoice {
     }
 
     public String getInvoiceText() {
-        int width = 50;
         String symbol = "=";
-        String topBottom = symbol.repeat(width + 1);
-
+        String topBottom = symbol.repeat(WIDTH + 1);
         DecimalFormat df = new DecimalFormat("0.00");
 
-        String invoiceNumberText = symbol + " INVOICE NUMBER: " + invoiceNumber;
-        String invoiceStatusText = symbol + " STATUS: " + invoiceStatus;
-        String invoiceSum = symbol + " SUM: " + priceWithoutVAT + " EUR";
-        String invoiceVAT = symbol + " VAT (21%): " + df.format((priceWithoutVAT * VAT)) + " EUR";
-        String invoiceTotal = symbol + " TOTAL: " + df.format(priceWithVAT) + " EUR";
         String[] products = order.itemsToString().split("\n");
         StringBuilder invoiceProductList = new StringBuilder();
         for (String product : products) {
-            invoiceProductList
-                    .append(symbol)
-                    .append(" ")
-                    .append(product)
-                    .append(" ".repeat(width - product.length() - 2))
-                    .append(symbol)
-                    .append("\n");
+            invoiceProductList.append(formatInvoiceLine(symbol, " ", product));
         }
         return topBottom + "\n"
-                + invoiceNumberText + " ".repeat(width - invoiceNumberText.length()) + symbol + "\n"
-                + invoiceStatusText + " ".repeat(width - invoiceStatusText.length()) + symbol + "\n"
+                + formatInvoiceLine(symbol, " INVOICE NUMBER ", invoiceNumber)
+                + formatInvoiceLine(symbol, " STATUS: ", invoiceStatus)
                 + invoiceProductList
-                + invoiceSum + " ".repeat(width - invoiceSum.length()) + symbol + "\n"
-                + invoiceVAT + " ".repeat(width - invoiceVAT.length()) + symbol + "\n"
-                + invoiceTotal + " ".repeat(width - invoiceTotal.length()) + symbol + "\n"
+                + formatInvoiceLine(symbol, " SUM: ", priceWithoutVAT + " EUR")
+                + formatInvoiceLine(symbol, " VAT (21%): ", df.format(priceWithoutVAT * VAT) + " EUR")
+                + formatInvoiceLine(symbol, " TOTAL: ", df.format(priceWithVAT) + " EUR")
                 + topBottom;
+    }
+
+    private <T> String formatInvoiceLine(String symbol, String displayText, T dataText) {
+        String space = " ";
+        String invoiceLine = symbol + displayText + dataText;
+        return invoiceLine + space.repeat(WIDTH - invoiceLine.length()) + symbol + "\n";
     }
 
     public void send() {
