@@ -11,12 +11,8 @@ public class DebitCard extends Card {
     }
 
     @Override
-    public void addMoney(BigDecimal amount) {
-        try {
-            super.addMoney(amount);
-        } catch (NotEnoughFundsException e) {
-            System.out.println(e.getMessage());
-        }
+    public void addMoney(BigDecimal amount) throws NotEnoughFundsException {
+        super.addMoney(amount);
         if (this.getAmount().compareTo(HIGHER_LIMIT) > 0) {
             System.out.println("Warning: Too much money");
         }

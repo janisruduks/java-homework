@@ -4,15 +4,15 @@ import java.math.BigDecimal;
 
 abstract class Card {
 
-    private String cardNumber;
-    private String cardOwner;
-    private String CCVCode;
+    private final String cardNumber;
+    private final String cardOwner;
+    private final String ccv;
     private BigDecimal amount;
 
     public Card(String cardNumber, String cardOwner, String CCVCode, BigDecimal amount) {
         this.cardNumber = cardNumber;
         this.cardOwner = cardOwner;
-        this.CCVCode = CCVCode;
+        this.ccv = CCVCode;
         this.amount = amount;
     }
 
@@ -37,7 +37,7 @@ abstract class Card {
     }
 
     public String getCCVCode() {
-        return CCVCode;
+        return ccv;
     }
 
     public BigDecimal getAmount() {

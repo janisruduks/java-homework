@@ -11,12 +11,8 @@ public class CreditCard extends Card {
     }
 
     @Override
-    public void takeMoney(BigDecimal amount) {
-        try {
-            super.takeMoney(amount);
-        } catch (NotEnoughFundsException e) {
-            System.out.println(e.getMessage());
-        }
+    public void takeMoney(BigDecimal amount) throws NotEnoughFundsException {
+        super.takeMoney(amount);
         if (LOWER_LIMIT.compareTo(getAmount()) > 0) {
             System.out.println("Warning: Low funds");
         }
