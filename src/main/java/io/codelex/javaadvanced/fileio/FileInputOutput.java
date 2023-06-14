@@ -1,33 +1,39 @@
 package io.codelex.javaadvanced.fileio;
 
 import java.io.*;
-import java.net.URL;
 
 public class FileInputOutput {
 
-    File input;
-    File output;
+    private final File input;
+    private final String outputName;
+    private static final String FILE_PATH = "src/main/java/io/codelex/javaadvanced/fileio/";
 
-    public FileInputOutput(String input) {
-        this.input = new File(input);
-        writeToOutput();
+    public FileInputOutput(String fileName) {
+        this.input = new File(fileName);
+        this.outputName = reverseFileName(fileName);
+        writeToOutputReversed();
     }
 
-    private void writeToOutput() {
-        try (BufferedReader br = new BufferedReader(new FileReader(input))) {
-            StringBuilder lines = new StringBuilder();
+    private void writeToOutputReversed() {
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH + input))) {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH + outputName));
             String line;
             while ((line = br.readLine()) != null) {
-                StringBuilder reversedLine = new StringBuilder(line);
-                reversedLine.reverse();
-                lines.append(reversedLine);
-                BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+                StringBuilder reversedLine = new StringBuilder(line).reverse();
                 writer.write(reversedLine.toString());
-
-                writer.close();
+                writer.newLine();
             }
+            writer.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
+    }
+
+    private String reverseFileName(String fileName) {
+        String[] fileNameWithoutExtension = fileName.split("\\.");
+        return new StringBuilder(fileNameWithoutExtension[0])
+                .reverse()
+                .append(".")
+                .append(fileNameWithoutExtension[1]).toString();
     }
 }
