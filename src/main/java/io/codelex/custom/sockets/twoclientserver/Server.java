@@ -15,6 +15,7 @@ public class Server {
             Runnable user1 = () -> {
                 try {
                     Socket socket = server.accept();
+                    System.out.println("Client 1 connected.");
                     serverConnection(socket);
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
@@ -23,6 +24,7 @@ public class Server {
             Runnable user2 = () -> {
                 try {
                     Socket socket = server.accept();
+                    System.out.println("Client 2 connected.");
                     serverConnection(socket);
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
