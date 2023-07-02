@@ -25,6 +25,11 @@ public class ArrayListExercise9 {
 
         //TODO: Write a Java program to join two array lists.
         //...
+        List<String> thridList = new ArrayList<>(firstList);
+        thridList.addAll(secondList);
+
+        System.out.println("List of both lists combined: " + thridList);
+
     }
 
 }
