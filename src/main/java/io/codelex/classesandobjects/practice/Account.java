@@ -2,7 +2,7 @@ package io.codelex.classesandobjects.practice;
 
 public class Account {
     private double balance;
-    private String owner;
+    private final String owner;
 
     public Account(String owner, double balance) {
         this.balance = balance;
